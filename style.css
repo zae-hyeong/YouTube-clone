@@ -1,0 +1,31 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: block;
+    height: 56px;
+    width: 100%;
+    padding: 0, 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+header .icon-btn {
+    display: block;
+    width: 24px;
+    height: 24px;
+}
+
+header div {
+    display: block;
+    height: 56px;
+    width: 100%;
+    padding: 0, 16px;
+    display: flex;
+    flex-direction: row;
+}

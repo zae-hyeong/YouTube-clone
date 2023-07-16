@@ -1,0 +1,81 @@
+:root {
+	--yt-gray: #E5E5E5;
+}
+
+* {
+	margin:0;
+	padding:0;
+	box-sizing: content-box;
+}
+
+html, body { width: 100%; }
+a { text-decoration: none; color: #333; }
+li { display: block; }
+
+.flex { display: flex; justify-content: space-between; align-items: center;}
+
+#wrap { 
+	width: 100%; 
+	font-family: "Roboto","Arial",sans-serif;
+}
+
+#main-header {
+	height: 56px;
+	background-color: #ddd;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0px 16px;
+}
+#header-left-menus, 
+#header-center-menus, 
+#header-right-menus { 
+	display: flex; 
+	justify-content: space-between;
+	align-items: center;
+}
+
+.header-icon { width: 24px; height: 24px; padding: 8px; }
+.header-logo { width: 90px; height: 20px; padding: 18px 14px 18px 16px; }
+.user-icon > img { width: 32px; height: 32px; border-radius: 50%; }
+
+#search-layout {
+	border: 0.8px solid black;
+	border-radius: 40px 0px 0px 40px;
+	padding:10px;
+}
+
+#header-center-menus > button {
+	border: 0.8px solid black;
+	border-radius: 0px 40px 40px 0px;
+	background-color: #888;
+	height: 100%;
+}
+
+#main-aside {
+	width: 240px;
+	position: absolute;
+	background-color: #ccc;
+	padding: 12px;
+	box-sizing: border-box;
+}
+#main-aside > nav { padding-right: 12px; box-sizing: border-box; }
+#main-aside > nav > hr { margin: 12px 0px; }
+
+.aside-menu {
+	height: 40px;
+	padding: 0px 12px;
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	background-color: #999;
+}
+.aside-menu:hover { background-color: var(--yt-gray); }
+.aside-menu > a { width: 100%; }
+.menu-icon { width: 25%; height: 100%; }
+.menu-icon > .aside-icon { width: 24px; height: 24px; }
+.menu-text { 
+	width: 75%; height: 100%; 
+	font-size: 14px;
+	white-space: nowrap; text-overflow: ellipsis; overflow: hidden;
+}

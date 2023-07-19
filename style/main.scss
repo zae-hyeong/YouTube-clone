@@ -2,15 +2,8 @@
 	--yt-gray: #E5E5E5;
 }
 
-* {
-	margin:0;
-	padding:0;
-	box-sizing: content-box;
-}
-
 html, body { width: 100%; }
 a { text-decoration: none; color: #333; }
-li { display: block; }
 
 .flex { display: flex; justify-content: space-between; align-items: center;}
 
@@ -52,15 +45,19 @@ li { display: block; }
 	height: 100%;
 }
 
-#main-aside {
+#main-aside { 
 	width: 240px;
 	position: absolute;
 	background-color: #ccc;
 	padding: 12px;
 	box-sizing: border-box;
+  nav {
+    padding-right: 12px; box-sizing: border-box; 
+    hr { 
+      margin: 12px 0px; 
+    }
+  }
 }
-#main-aside > nav { padding-right: 12px; box-sizing: border-box; }
-#main-aside > nav > hr { margin: 12px 0px; }
 
 .aside-menu {
 	height: 40px;
@@ -69,13 +66,16 @@ li { display: block; }
 	display: flex;
 	align-items: center;
 	background-color: #999;
+  &:hover { background-color: var(--yt-gray); }
+  a { width: 100%; }
 }
-.aside-menu:hover { background-color: var(--yt-gray); }
-.aside-menu > a { width: 100%; }
-.menu-icon { width: 25%; height: 100%; }
-.menu-icon > .aside-icon { width: 24px; height: 24px; }
-.menu-text { 
-	width: 75%; height: 100%; 
-	font-size: 14px;
-	white-space: nowrap; text-overflow: ellipsis; overflow: hidden;
+
+.menu-icon { 
+  width: 25%; height: 100%; 
+  .aside-icon { width: 24px; height: 24px; }
+  .menu-text { 
+    width: 75%; height: 100%; 
+    font-size: 14px;
+    white-space: nowrap; text-overflow: ellipsis; overflow: hidden;
+  }
 }

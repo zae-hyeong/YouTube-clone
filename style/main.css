@@ -2,12 +2,6 @@
   --yt-gray: #E5E5E5;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: content-box;
-}
-
 html, body {
   width: 100%;
 }
@@ -15,10 +9,6 @@ html, body {
 a {
   text-decoration: none;
   color: #333;
-}
-
-li {
-  display: block;
 }
 
 .flex {
@@ -87,13 +77,11 @@ li {
   padding: 12px;
   box-sizing: border-box;
 }
-
-#main-aside > nav {
+#main-aside nav {
   padding-right: 12px;
   box-sizing: border-box;
 }
-
-#main-aside > nav > hr {
+#main-aside nav hr {
   margin: 12px 0px;
 }
 
@@ -105,12 +93,10 @@ li {
   align-items: center;
   background-color: #999;
 }
-
 .aside-menu:hover {
   background-color: var(--yt-gray);
 }
-
-.aside-menu > a {
+.aside-menu a {
   width: 100%;
 }
 
@@ -118,13 +104,11 @@ li {
   width: 25%;
   height: 100%;
 }
-
-.menu-icon > .aside-icon {
+.menu-icon .aside-icon {
   width: 24px;
   height: 24px;
 }
-
-.menu-text {
+.menu-icon .menu-text {
   width: 75%;
   height: 100%;
   font-size: 14px;

@@ -11,7 +11,7 @@ a {
   color: #333;
 }
 
-.flex {
+.flex, #main-header #header-right-menus, #main-header #header-center-menus, #main-header #header-left-menus {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -30,28 +30,23 @@ a {
   align-items: center;
   padding: 0px 16px;
 }
-
-#header-left-menus,
-#header-center-menus,
-#header-right-menus {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+#main-header #header-right-menus .header-icon {
+  margin-right: 8px;
 }
-
-.header-icon {
+#main-header #header-right-menus .user-icon {
+  margin: 0px 14px;
+}
+#main-header .header-icon {
   width: 24px;
   height: 24px;
   padding: 8px;
 }
-
-.header-logo {
+#main-header .header-logo {
   width: 90px;
   height: 20px;
   padding: 18px 14px 18px 16px;
 }
-
-.user-icon > img {
+#main-header .user-icon > img {
   width: 32px;
   height: 32px;
   border-radius: 50%;
@@ -71,7 +66,7 @@ a {
 }
 
 #main-aside {
-  width: 240px;
+  width: 224px;
   position: absolute;
   background-color: #ccc;
   padding: 12px;
@@ -99,19 +94,22 @@ a {
 .aside-menu a {
   width: 100%;
 }
-
-.menu-icon {
+.aside-menu .menu-icon {
   width: 25%;
   height: 100%;
 }
-.menu-icon .aside-icon {
+.aside-menu .menu-icon .aside-icon {
   width: 24px;
   height: 24px;
 }
-.menu-icon .menu-text {
+.aside-menu .menu-icon .aside-icon img {
+  border-radius: 50%;
+}
+.aside-menu .menu-text {
   width: 75%;
   height: 100%;
   font-size: 14px;
+  text-align: start;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;

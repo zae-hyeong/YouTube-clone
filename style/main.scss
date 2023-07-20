@@ -19,18 +19,29 @@ a { text-decoration: none; color: #333; }
 	justify-content: space-between;
 	align-items: center;
 	padding: 0px 16px;
-}
-#header-left-menus, 
-#header-center-menus, 
-#header-right-menus { 
-	display: flex; 
-	justify-content: space-between;
-	align-items: center;
-}
 
-.header-icon { width: 24px; height: 24px; padding: 8px; }
-.header-logo { width: 90px; height: 20px; padding: 18px 14px 18px 16px; }
-.user-icon > img { width: 32px; height: 32px; border-radius: 50%; }
+	#header-left-menus{ 
+		@extend .flex;
+	}
+	#header-center-menus{ 
+		@extend .flex;
+	}
+
+	#header-right-menus {
+		@extend .flex;
+
+		.header-icon {
+			margin-right: 8px;
+		}
+		.user-icon {
+			margin: 0px 14px;
+		}
+	}
+
+	.header-icon { width: 24px; height: 24px; padding: 8px; }
+	.header-logo { width: 90px; height: 20px; padding: 18px 14px 18px 16px; }
+	.user-icon > img { width: 32px; height: 32px; border-radius: 50%; }
+}
 
 #search-layout {
 	border: 0.8px solid black;
@@ -46,7 +57,7 @@ a { text-decoration: none; color: #333; }
 }
 
 #main-aside { 
-	width: 240px;
+	width: 224px;
 	position: absolute;
 	background-color: #ccc;
 	padding: 12px;
@@ -67,15 +78,23 @@ a { text-decoration: none; color: #333; }
 	align-items: center;
 	background-color: #999;
   &:hover { background-color: var(--yt-gray); }
-  a { width: 100%; }
+  
+	a { width: 100%; }
+
+	.menu-icon { 
+		width: 25%; height: 100%; 
+		.aside-icon { 
+			width: 24px; height: 24px;
+			img {
+				border-radius: 50%;
+			}
+		}
+	}
+	.menu-text { 
+		width: 75%; height: 100%; 
+		font-size: 14px;
+		text-align: start;
+		white-space: nowrap; text-overflow: ellipsis; overflow: hidden;
+	}
 }
 
-.menu-icon { 
-  width: 25%; height: 100%; 
-  .aside-icon { width: 24px; height: 24px; }
-  .menu-text { 
-    width: 75%; height: 100%; 
-    font-size: 14px;
-    white-space: nowrap; text-overflow: ellipsis; overflow: hidden;
-  }
-}

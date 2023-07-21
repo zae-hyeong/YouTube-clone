@@ -1,34 +1,61 @@
 :root {
-  --yt-gray: #E5E5E5;
+  --yt-gray: #e5e5e5;
+  --header-height: 56px;
+  --aside-width: 224px;
 }
 
-html, body {
+html,
+body {
   width: 100%;
 }
-
-a {
-  text-decoration: none;
-  color: #333;
-}
-
-.flex, #main-header #header-right-menus, #main-header #header-center-menus, #main-header #header-left-menus {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-#wrap {
+html #wrap,
+body #wrap {
   width: 100%;
   font-family: "Roboto", "Arial", sans-serif;
 }
+html #wrap #main-header,
+body #wrap #main-header {
+  position: fixed;
+  z-index: 500;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: var(--header-height);
+}
+html #wrap #main-aside,
+body #wrap #main-aside {
+  position: fixed;
+  z-index: 300;
+  top: var(--header-height);
+  left: 0;
+  overflow: scroll;
+  box-sizing: border-box;
+  padding: 12px;
+  height: calc(100vh - var(--header-height));
+  width: var(--aside-width);
+}
+html #wrap #main,
+body #wrap #main {
+  min-width: calc(100vw - var(--aside-width));
+  min-height: 100vh;
+}
 
-#main-header {
-  height: 56px;
-  background-color: #ddd;
+.flex, #main-header #header-right-menus, #main-header #header-center-menus, #main-header #header-left-menus, #main-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+#main-header {
+  background-color: #ddd;
   padding: 0px 16px;
+}
+#main-header #header-center-menus button {
+  border: 0.8px solid black;
+  border-radius: 0px 40px 40px 0px;
+  background-color: #888;
+  height: 100%;
 }
 #main-header #header-right-menus .header-icon {
   margin-right: 8px;
@@ -58,20 +85,8 @@ a {
   padding: 10px;
 }
 
-#header-center-menus > button {
-  border: 0.8px solid black;
-  border-radius: 0px 40px 40px 0px;
-  background-color: #888;
-  height: 100%;
-}
-
 #main-aside {
-  width: 224px;
-  position: absolute;
   background-color: #ccc;
-  padding: 12px;
-  box-sizing: border-box;
-  float: left;
 }
 #main-aside nav {
   padding-right: 12px;

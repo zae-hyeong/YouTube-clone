@@ -1,123 +1,172 @@
 :root {
-	--yt-gray: #E5E5E5;
+  --yt-gray: #e5e5e5;
+	--header-height: 56px;
+	--aside-width: 224px;
 }
 
-html, body { width: 100%; }
-a { text-decoration: none; color: #333; }
+html,
+body {
+  width: 100%;
+	#wrap {
+		width: 100%;
+		font-family: "Roboto", "Arial", sans-serif;
 
-.flex { display: flex; justify-content: space-between; align-items: center;}
+		#main-header {
+			position: fixed;
+			top:0;
+			left: 0;
+			min-width: 100vw;
+			min-height: var(--header-height);
+		}
 
-#wrap { 
-	width: 100%; 
-	font-family: "Roboto","Arial",sans-serif;
+		#main-aside {
+			position: fixed;
+			top: var(--header-height);
+			left: 0;
+			min-height: calc(100vh - var(--header-height));
+			min-width: var(--aside-width);
+		}
+
+		#main {
+			position: fixed;
+			top: var(--header-height);
+			left: 0;
+			min-width: calc(100vw - var(--aside-width));
+			min-height: calc(100vh -var(--header-height));
+		}
+	}
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #main-header {
-	height: 56px;
-	background-color: #ddd;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 0px 16px;
+	@extend .flex;
 
-	#header-left-menus{ 
-		@extend .flex;
-	}
-	#header-center-menus{ 
-		@extend .flex;
-	}
+  padding: 0px 16px;
+	box-sizing: border-box;
+	z-index: 500;
 
-	#header-right-menus {
-		@extend .flex;
+  #header-left-menus {
+    @extend .flex;
+  }
+  #header-center-menus {
+    @extend .flex;
 
-		.header-icon {
-			margin-right: 8px;
-		}
-		.user-icon {
-			margin: 0px 14px;
-		}
-	}
+		button {
+			border: 0.8px solid black;
+			border-radius: 0px 40px 40px 0px;
+			background-color: #888;
+			height: 100%;
+		}		
+  }
 
-	.header-icon { width: 24px; height: 24px; padding: 8px; }
-	.header-logo { width: 90px; height: 20px; padding: 18px 14px 18px 16px; }
-	.user-icon > img { width: 32px; height: 32px; border-radius: 50%; }
+  #header-right-menus {
+    @extend .flex;
+
+    .header-icon {
+      margin-right: 8px;
+    }
+    .user-icon {
+      margin: 0px 14px;
+    }
+  }
+
+  .header-icon {
+    width: 24px;
+    height: 24px;
+    padding: 8px;
+  }
+  .header-logo {
+    width: 90px;
+    height: 20px;
+    padding: 18px 14px 18px 16px;
+  }
+  .user-icon > img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+  }
 }
 
 #search-layout {
-	border: 0.8px solid black;
-	border-radius: 40px 0px 0px 40px;
-	padding:10px;
+  border: 0.8px solid black;
+  border-radius: 40px 0px 0px 40px;
+  padding: 10px;
 }
 
-#header-center-menus > button {
-	border: 0.8px solid black;
-	border-radius: 0px 40px 40px 0px;
-	background-color: #888;
-	height: 100%;
-}
-
-#main-aside { 
-	width: 224px;
-	position: absolute;
-	background-color: #ccc;
-	padding: 12px;
+#main-aside {
+	overflow: scroll;
 	box-sizing: border-box;
-	float: left;
+	padding: 12px;
+	z-index: 300;
   nav {
-    padding-right: 12px; box-sizing: border-box; 
-    hr { 
-      margin: 12px 0px; 
+    padding-right: 12px;
+    box-sizing: border-box;
+    hr {
+      margin: 12px 0px;
     }
   }
 }
 
 .aside-menu {
-	height: 40px;
-	padding: 0px 12px;
-	border-radius: 10px;
-	display: flex;
-	align-items: center;
-	background-color: #999;
-  &:hover { background-color: var(--yt-gray); }
-  
-	a { width: 100%; }
+  height: 40px;
+  padding: 0px 12px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  &:hover {
+    background-color: var(--yt-gray);
+  }
 
-	.menu-icon { 
-		width: 25%; height: 100%; 
-		.aside-icon { 
-			width: 24px; height: 24px;
-			img {
-				border-radius: 50%;
+  a {
+    width: 100%;
+		.menu-icon {
+			width: 25%;
+			height: 100%;
+			.aside-icon {
+				width: 24px;
+				height: 24px;
+				img {
+					border-radius: 50%;
+				}
 			}
-		}
-	}
-	.menu-text { 
-		width: 75%; height: 100%; 
-		font-size: 14px;
-		text-align: start;
-		white-space: nowrap; text-overflow: ellipsis; overflow: hidden;
-	}
+  }
+
+  }
+  .menu-text {
+    width: 75%;
+    height: 100%;
+    font-size: 14px;
+    text-align: start;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
 }
 
-#main { 
-	width: 100%;
-	background-color: red;
-	ul {
-		display: flex;
-		flex-wrap: wrap;
-		padding: 0px 16px;
-	}
+#main {
+  width: 100%;
+  background-color: red;
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px 16px;
+  }
 }
 
 .video-item {
-	height: 320px;
-	background-color: blue;
-	
-	display: flex;
-	flex-wrap: wrap;
+  height: 320px;
+  background-color: blue;
 
-	padding: 0px 8px 40px 8px;
-	img {
-		width: 100px;
-	}
+  display: flex;
+  flex-wrap: wrap;
+
+  padding: 0px 8px 40px 8px;
+  img {
+    width: 100px;
+  }
 }

@@ -2,6 +2,7 @@
   --yt-gray: #e5e5e5;
 	--header-height: 56px;
 	--aside-width: 224px;
+  --yt-text-gray: rgb(96, 96, 96);
 }
 
 html,
@@ -30,9 +31,9 @@ body {
 		#main {
 			position: fixed;
 			top: var(--header-height);
-			left: 0;
+			left: var(--aside-width);
 			min-width: calc(100vw - var(--aside-width));
-			min-height: calc(100vh -var(--header-height));
+			min-height: calc(100vh - var(--header-height));
 		}
 	}
 }
@@ -134,9 +135,9 @@ body {
 					border-radius: 50%;
 				}
 			}
+    }
   }
 
-  }
   .menu-text {
     width: 75%;
     height: 100%;
@@ -149,24 +150,95 @@ body {
 }
 
 #main {
-  width: 100%;
-  background-color: red;
-  ul {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0px 16px;
-  }
+  padding: 0px 16px;
 }
 
 .video-item {
-  height: 320px;
-  background-color: blue;
-
+  width: 400px;
+  aspect-ratio: 16 / 9;
   display: flex;
   flex-wrap: wrap;
-
+  border: 1px solid var(--yt-gray);
+  border-radius: 10px;
   padding: 0px 8px 40px 8px;
+
   img {
-    width: 100px;
+    width: 100%;
+		aspect-ratio: 16 / 9;
+    border-radius: 10px;
   }
+
+	.video-info {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 12px 24px 0px 0px;
+
+		.channel-img {
+      width: 48px;
+      height: 100%;
+      padding: 0px 12px 0px 0px;
+      img {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+      }
+		}
+
+    .video-more {
+      width: 40px;
+      height: 100%;
+      div {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    .video-text-info {
+      width: calc(100% - 60px);
+
+      .video-title {
+        width: 100%;
+        max-height: 44px;
+        margin-bottom: 4px;
+        background-color: pink;
+
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 22px;
+        white-space: wrap;
+        line-clamp: 2;
+      }
+      .channel-name {
+        background-color: violet;
+
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        overflow-wrap: normal;
+        white-space: wrap;
+        color: var(--yt-text-gray);
+      }
+      .detail-info {
+        width: 100%;
+        font-size: 14px;
+        line-height: 20px;
+        color: var(--yt-text-gray);
+
+        .video-views {
+          background-color: yellow;
+        }
+        .upload-before::before {
+          content: "•";
+          background-color: aliceblue;
+          margin: 0px 4px;
+        }
+        .upload-before {
+          background-color: green;
+        }
+      }
+    }
+		
+	}
 }

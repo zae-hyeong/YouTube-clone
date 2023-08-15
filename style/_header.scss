@@ -1,0 +1,56 @@
+@import "_defaultSetting.scss";
+
+#main-header {
+	@extend .flex;
+
+  padding: 0px 16px;
+	box-sizing: border-box;
+	z-index: 500;
+
+  #header-left-menus {
+    @extend .flex;
+  }
+  #header-center-menus {
+    @extend .flex;
+
+		button {
+			border: 0.8px solid black;
+			border-radius: 0px 40px 40px 0px;
+			background-color: #888;
+			height: 100%;
+		}		
+  }
+
+  #header-right-menus {
+    @extend .flex;
+
+    .header-icon {
+      margin-right: 8px;
+    }
+    .user-icon {
+      margin: 0px 14px;
+    }
+  }
+
+  .header-icon {
+    width: 24px;
+    height: 24px;
+    padding: 8px;
+  }
+  .header-logo {
+    width: 90px;
+    height: 20px;
+    padding: 18px 14px 18px 16px;
+  }
+  .user-icon > img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+  }
+}
+
+#search-layout {
+  border: 0.8px solid black;
+  border-radius: 40px 0px 0px 40px;
+  padding: 10px;
+}

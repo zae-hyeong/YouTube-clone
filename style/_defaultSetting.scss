@@ -1,0 +1,11 @@
+:root {
+  --yt-gray: #e5e5e5;
+  --yt-text-gray: rgb(96, 96, 96);
+  --default-font: "Roboto", "Arial", sans-serif;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

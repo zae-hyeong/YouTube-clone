@@ -1,0 +1,40 @@
+@import "_defaultSetting.scss";
+
+:root{
+	--header-height: 56px;
+	--aside-width: 224px;
+}
+
+html, body {
+  min-width: 100%;
+  min-height: 100%;
+  font-family: var(--default-font);
+
+	#wrap {
+    min-width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+		#main-header {
+			min-width: 100%;
+			min-height: var(--header-height);
+		}
+
+		#main-aside {
+			position: fixed;
+			top: var(--header-height);
+			left: 0;
+			min-height: calc(100vh - var(--header-height));
+			min-width: var(--aside-width);
+		}
+
+		#main {
+			position: fixed;
+			top: var(--header-height);
+			left: var(--aside-width);
+			min-width: calc(100vw - var(--aside-width));
+			min-height: calc(100vh - var(--header-height));
+		}
+	}
+}

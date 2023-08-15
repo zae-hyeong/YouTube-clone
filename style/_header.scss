@@ -1,5 +1,25 @@
 @import "_defaultSetting.scss";
 
+@mixin info-bubble {
+  content: "설명";
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  right: 0;
+  box-sizing: content-box;
+  padding: 8px 5px;
+
+  background-color: #3d3d3d;
+  opacity: 0.6;
+  border-radius: 10%;
+  
+  color: white;
+  white-space: nowrap;
+  font-size: 0.8rem;
+  text-align: center;
+  line-height: 100%;
+}
+
 #main-header {
 	@extend .flex;
 
@@ -10,47 +30,127 @@
   #header-left-menus {
     @extend .flex;
   }
+
   #header-center-menus {
     @extend .flex;
-
-		button {
-			border: 0.8px solid black;
-			border-radius: 0px 40px 40px 0px;
-			background-color: #888;
-			height: 100%;
-		}		
   }
 
   #header-right-menus {
     @extend .flex;
+  }
+}
 
-    .header-icon {
-      margin-right: 8px;
-    }
-    .user-icon {
-      margin: 0px 14px;
-    }
+.header-icon {
+  width: 24px;
+  height: 24px;
+  padding: 8px;
+  position: relative;
+
+  &:hover {
+    background-color: var(--yt-gray);
+    border-radius: 50%;
   }
 
-  .header-icon {
-    width: 24px;
-    height: 24px;
-    padding: 8px;
+  &:hover::after {
+    @include info-bubble;
   }
-  .header-logo {
+}
+
+#header-left-menus {
+  #header-logo {
     width: 90px;
     height: 20px;
     padding: 18px 14px 18px 16px;
   }
-  .user-icon > img {
-    width: 32px;
-    height: 32px;
+}
+
+#header-center-menus {
+  width: 40%;
+  height: 38px;
+  justify-content: flex-start;
+
+  #search-layout {
+    height: 100%;
+    border: 0.8px solid var(--yt-darker-gray);
+    border-radius: 40px 0px 0px 40px;
+    flex: 1;
+    display: flex;
+    position: relative;
+
+    padding: 0px 10px 0px 20px;
+
+    form {
+      width: calc(100% - 40px);
+      height: calc(100% - 10px);
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+      display: flex;
+      align-items: center;
+      
+      input {
+        width: 100%;
+        height: 100%;
+        border: none;
+        outline: none;
+        font-size: 1rem;
+      }
+    }
+
+    img {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translate(0, -50%);
+      border: none;
+    }
+  }
+  
+  #search-btn {
+    width: 62px;
+    height: calc(100% + 2px);
+
+    background-color: var(--yt-gray);
+    border: 1px solid var(--yt-darker-gray);
+    border-radius: 0px 40px 40px 0px;
+    padding: 6px 6px;
+    margin-right: 10px;
+    position: relative;
+  
+    &:hover {
+      background-color: var(--yt-darker-gray);
+    }
+
+    &:hover::after {
+      @include info-bubble;
+    }
+  }
+
+  #mic-icon {
+    @extend .header-icon;
+    background-color: var(--yt-gray);
     border-radius: 50%;
+    &:hover {
+      background-color: var(--yt-darker-gray);
+    }
   }
 }
 
-#search-layout {
-  border: 0.8px solid black;
-  border-radius: 40px 0px 0px 40px;
-  padding: 10px;
+#header-right-menus {
+  .user-icon {
+    margin: 0px 14px;
+  }
+}
+
+
+
+
+.user-icon > img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.header-icon {
+  margin-right: 8px;
 }

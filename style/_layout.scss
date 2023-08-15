@@ -22,19 +22,13 @@ html, body {
 		}
 
 		#main-aside {
-			position: fixed;
-			top: var(--header-height);
-			left: 0;
-			min-height: calc(100vh - var(--header-height));
+			min-height: calc(100% - var(--header-height));
 			min-width: var(--aside-width);
 		}
 
 		#main {
-			position: fixed;
-			top: var(--header-height);
-			left: var(--aside-width);
-			min-width: calc(100vw - var(--aside-width));
-			min-height: calc(100vh - var(--header-height));
+			min-width: calc(100% - var(--aside-width));
+			min-height: calc(100% - var(--header-height));
 		}
 	}
 }

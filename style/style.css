@@ -1,6 +1,7 @@
 @charset "UTF-8";
 :root {
   --yt-gray: #e5e5e5;
+  --yt-darker-gray: #D9D9D9;
   --yt-text-gray: rgb(96, 96, 96);
   --default-font: "Roboto", "Arial", sans-serif;
 }
@@ -13,6 +14,7 @@
 
 :root {
   --yt-gray: #e5e5e5;
+  --yt-darker-gray: #D9D9D9;
   --yt-text-gray: rgb(96, 96, 96);
   --default-font: "Roboto", "Arial", sans-serif;
 }
@@ -44,22 +46,17 @@ html #wrap #main-header, body #wrap #main-header {
   min-height: var(--header-height);
 }
 html #wrap #main-aside, body #wrap #main-aside {
-  position: fixed;
-  top: var(--header-height);
-  left: 0;
-  min-height: calc(100vh - var(--header-height));
+  min-height: calc(100% - var(--header-height));
   min-width: var(--aside-width);
 }
 html #wrap #main, body #wrap #main {
-  position: fixed;
-  top: var(--header-height);
-  left: var(--aside-width);
-  min-width: calc(100vw - var(--aside-width));
-  min-height: calc(100vh - var(--header-height));
+  min-width: calc(100% - var(--aside-width));
+  min-height: calc(100% - var(--header-height));
 }
 
 :root {
   --yt-gray: #e5e5e5;
+  --yt-darker-gray: #D9D9D9;
   --yt-text-gray: rgb(96, 96, 96);
   --default-font: "Roboto", "Arial", sans-serif;
 }
@@ -75,42 +72,132 @@ html #wrap #main, body #wrap #main {
   box-sizing: border-box;
   z-index: 500;
 }
-#main-header #header-center-menus button {
-  border: 0.8px solid black;
-  border-radius: 0px 40px 40px 0px;
-  background-color: #888;
-  height: 100%;
-}
-#main-header #header-right-menus .header-icon {
-  margin-right: 8px;
-}
-#main-header #header-right-menus .user-icon {
-  margin: 0px 14px;
-}
-#main-header .header-icon {
+.header-icon, #header-center-menus #mic-icon {
   width: 24px;
   height: 24px;
   padding: 8px;
+  position: relative;
 }
-#main-header .header-logo {
+.header-icon:hover, #header-center-menus #mic-icon:hover {
+  background-color: var(--yt-gray);
+  border-radius: 50%;
+}
+.header-icon:hover::after, #header-center-menus #mic-icon:hover::after {
+  content: "설명";
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  right: 0;
+  box-sizing: content-box;
+  padding: 8px 5px;
+  background-color: #3d3d3d;
+  opacity: 0.6;
+  border-radius: 10%;
+  color: white;
+  white-space: nowrap;
+  font-size: 0.8rem;
+  text-align: center;
+  line-height: 100%;
+}
+
+#header-left-menus #header-logo {
   width: 90px;
   height: 20px;
   padding: 18px 14px 18px 16px;
 }
-#main-header .user-icon > img {
+
+#header-center-menus {
+  width: 40%;
+  height: 38px;
+  justify-content: flex-start;
+}
+#header-center-menus #search-layout {
+  height: 100%;
+  border: 0.8px solid var(--yt-darker-gray);
+  border-radius: 40px 0px 0px 40px;
+  flex: 1;
+  display: flex;
+  position: relative;
+  padding: 0px 10px 0px 20px;
+}
+#header-center-menus #search-layout form {
+  width: calc(100% - 40px);
+  height: calc(100% - 10px);
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  display: flex;
+  align-items: center;
+}
+#header-center-menus #search-layout form input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+#header-center-menus #search-layout img {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translate(0, -50%);
+  border: none;
+}
+#header-center-menus #search-btn {
+  width: 62px;
+  height: calc(100% + 2px);
+  background-color: var(--yt-gray);
+  border: 1px solid var(--yt-darker-gray);
+  border-radius: 0px 40px 40px 0px;
+  padding: 6px 6px;
+  margin-right: 10px;
+  position: relative;
+}
+#header-center-menus #search-btn:hover {
+  background-color: var(--yt-darker-gray);
+}
+#header-center-menus #search-btn:hover::after {
+  content: "설명";
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  right: 0;
+  box-sizing: content-box;
+  padding: 8px 5px;
+  background-color: #3d3d3d;
+  opacity: 0.6;
+  border-radius: 10%;
+  color: white;
+  white-space: nowrap;
+  font-size: 0.8rem;
+  text-align: center;
+  line-height: 100%;
+}
+#header-center-menus #mic-icon {
+  background-color: var(--yt-gray);
+  border-radius: 50%;
+}
+#header-center-menus #mic-icon:hover {
+  background-color: var(--yt-darker-gray);
+}
+
+#header-right-menus .user-icon {
+  margin: 0px 14px;
+}
+
+.user-icon > img {
   width: 32px;
   height: 32px;
   border-radius: 50%;
 }
 
-#search-layout {
-  border: 0.8px solid black;
-  border-radius: 40px 0px 0px 40px;
-  padding: 10px;
+.header-icon, #header-center-menus #mic-icon {
+  margin-right: 8px;
 }
 
 :root {
   --yt-gray: #e5e5e5;
+  --yt-darker-gray: #D9D9D9;
   --yt-text-gray: rgb(96, 96, 96);
   --default-font: "Roboto", "Arial", sans-serif;
 }
@@ -171,6 +258,7 @@ html #wrap #main, body #wrap #main {
 
 :root {
   --yt-gray: #e5e5e5;
+  --yt-darker-gray: #D9D9D9;
   --yt-text-gray: rgb(96, 96, 96);
   --default-font: "Roboto", "Arial", sans-serif;
 }

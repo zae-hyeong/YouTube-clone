@@ -44,6 +44,7 @@
   width: 24px;
   height: 24px;
   padding: 8px;
+  margin-right: 8px;
   position: relative;
 
   &:hover {
@@ -139,18 +140,10 @@
 #header-right-menus {
   .user-icon {
     margin: 0px 14px;
+    img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+    }
   }
-}
-
-
-
-
-.user-icon > img {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-}
-
-.header-icon {
-  margin-right: 8px;
 }

@@ -76,6 +76,7 @@ html #wrap #main, body #wrap #main {
   width: 24px;
   height: 24px;
   padding: 8px;
+  margin-right: 8px;
   position: relative;
 }
 .header-icon:hover, #header-center-menus #mic-icon:hover {
@@ -184,15 +185,10 @@ html #wrap #main, body #wrap #main {
 #header-right-menus .user-icon {
   margin: 0px 14px;
 }
-
-.user-icon > img {
+#header-right-menus .user-icon img {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-}
-
-.header-icon, #header-center-menus #mic-icon {
-  margin-right: 8px;
 }
 
 :root {

@@ -67,6 +67,7 @@
 
 #header-center-menus {
   width: 40%;
+  max-width: 640px;
   height: 38px;
   justify-content: flex-start;
 
@@ -111,7 +112,7 @@
     width: 62px;
     height: calc(100% + 2px);
 
-    background-color: var(--yt-gray);
+    background-color: var(--yt-sub-gray);
     border: 1px solid var(--yt-darker-gray);
     border-radius: 0px 40px 40px 0px;
     padding: 6px 6px;
@@ -129,7 +130,7 @@
 
   #mic-icon {
     @extend .header-icon;
-    background-color: var(--yt-gray);
+    background-color: #f2f2f2;
     border-radius: 50%;
     &:hover {
       background-color: var(--yt-darker-gray);

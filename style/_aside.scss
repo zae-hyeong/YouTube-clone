@@ -47,3 +47,17 @@
     overflow: hidden;
   }
 }
+
+#main-aside {
+  nav{
+    p {
+      color: var(--yt-text-gray);
+      line-height: 18px;
+      padding: 12px;
+
+      #copyright {
+        color: #909090;
+      }
+    }
+  }
+}

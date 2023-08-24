@@ -74,6 +74,7 @@ html #wrap #main-aside::-webkit-scrollbar-thumb, body #wrap #main-aside::-webkit
 html #wrap #main, body #wrap #main {
   padding-right: 10px;
   flex-grow: 1;
+  width: calc(100% - var(--aside-width));
   height: calc(100vh - var(--header-height));
   overflow-x: hidden;
   overflow-y: scroll;
@@ -319,12 +320,36 @@ html #wrap #main::-webkit-scrollbar-thumb, body #wrap #main::-webkit-scrollbar-t
 }
 
 #main {
-  padding: 0px 16px;
+  background-color: red;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-content: space-between;
+}
+@media screen and (max-width: 1000px) {
+  #main .video-item-wrapper {
+    width: 33.3%;
+  }
+}
+@media screen and (max-width: 800px) {
+  #main .video-item-wrapper {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 400px) {
+  #main .video-item-wrapper {
+    width: 100%;
+  }
+}
+
+.video-item-wrapper {
+  width: 25%;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .video-item {
-  width: 400px;
-  aspect-ratio: 16/9;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   border: 1px solid var(--yt-gray);

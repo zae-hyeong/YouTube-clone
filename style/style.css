@@ -44,16 +44,22 @@ html #wrap, body #wrap {
   flex-wrap: wrap;
 }
 html #wrap #main-header, body #wrap #main-header {
-  min-width: 100%;
-  min-height: var(--header-height);
+  width: 100%;
+  height: var(--header-height);
 }
 html #wrap #main-aside, body #wrap #main-aside {
-  min-height: calc(100% - var(--header-height));
-  min-width: var(--aside-width);
+  width: var(--aside-width);
+  height: calc(100vh - var(--header-height));
+  overflow-x: hidden;
+  overflow-y: scroll;
+  box-sizing: border-box;
 }
 html #wrap #main, body #wrap #main {
-  min-width: calc(100% - var(--aside-width));
-  min-height: calc(100% - var(--header-height));
+  flex-grow: 1;
+  height: calc(100vh - var(--header-height));
+  overflow-x: hidden;
+  overflow-y: scroll;
+  box-sizing: border-box;
 }
 
 :root {
@@ -210,8 +216,6 @@ html #wrap #main, body #wrap #main {
 }
 
 #main-aside {
-  overflow: scroll;
-  box-sizing: border-box;
   padding: 12px;
   z-index: 300;
 }

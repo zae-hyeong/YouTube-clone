@@ -17,18 +17,24 @@ html, body {
     flex-wrap: wrap;
 
 		#main-header {
-			min-width: 100%;
-			min-height: var(--header-height);
+			width: 100%;
+			height: var(--header-height);
 		}
 
 		#main-aside {
-			min-height: calc(100% - var(--header-height));
-			min-width: var(--aside-width);
+			width: var(--aside-width);
+			height: calc(100vh - var(--header-height));
+			overflow-x: hidden;
+			overflow-y: scroll;
+			box-sizing: border-box;
 		}
 
 		#main {
-			min-width: calc(100% - var(--aside-width));
-			min-height: calc(100% - var(--header-height));
+			flex-grow: 1;
+			height: calc(100vh - var(--header-height));;
+			overflow-x: hidden;
+			overflow-y: scroll;
+			box-sizing: border-box;
 		}
 	}
 }

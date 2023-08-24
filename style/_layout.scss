@@ -2,7 +2,28 @@
 
 :root{
 	--header-height: 56px;
-	--aside-width: 224px;
+	--aside-width: 240px;
+}
+
+@mixin custom-scrollbar {
+	padding-right: 10px;
+
+	&::-webkit-scrollbar {
+		width: 0px;
+	}
+	&:hover {
+		padding-right: 0px;
+		&::-webkit-scrollbar {
+			width: 10px;
+		}
+	}
+	&::-webkit-scrollbar-track {
+		background-color: none;
+	}
+	&::-webkit-scrollbar-thumb {
+    background: var(--yt-darker-gray);
+    border-radius: 10px;
+	}
 }
 
 html, body {
@@ -22,6 +43,8 @@ html, body {
 		}
 
 		#main-aside {
+			@include custom-scrollbar;
+
 			width: var(--aside-width);
 			height: calc(100vh - var(--header-height));
 			overflow-x: hidden;
@@ -30,6 +53,8 @@ html, body {
 		}
 
 		#main {
+			@include custom-scrollbar;
+
 			flex-grow: 1;
 			height: calc(100vh - var(--header-height));;
 			overflow-x: hidden;

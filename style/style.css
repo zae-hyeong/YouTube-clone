@@ -29,7 +29,7 @@
 
 :root {
   --header-height: 56px;
-  --aside-width: 224px;
+  --aside-width: 240px;
 }
 
 html, body {
@@ -48,18 +48,52 @@ html #wrap #main-header, body #wrap #main-header {
   height: var(--header-height);
 }
 html #wrap #main-aside, body #wrap #main-aside {
+  padding-right: 10px;
   width: var(--aside-width);
   height: calc(100vh - var(--header-height));
   overflow-x: hidden;
   overflow-y: scroll;
   box-sizing: border-box;
 }
+html #wrap #main-aside::-webkit-scrollbar, body #wrap #main-aside::-webkit-scrollbar {
+  width: 0px;
+}
+html #wrap #main-aside:hover, body #wrap #main-aside:hover {
+  padding-right: 0px;
+}
+html #wrap #main-aside:hover::-webkit-scrollbar, body #wrap #main-aside:hover::-webkit-scrollbar {
+  width: 10px;
+}
+html #wrap #main-aside::-webkit-scrollbar-track, body #wrap #main-aside::-webkit-scrollbar-track {
+  background-color: none;
+}
+html #wrap #main-aside::-webkit-scrollbar-thumb, body #wrap #main-aside::-webkit-scrollbar-thumb {
+  background: var(--yt-darker-gray);
+  border-radius: 10px;
+}
 html #wrap #main, body #wrap #main {
+  padding-right: 10px;
   flex-grow: 1;
   height: calc(100vh - var(--header-height));
   overflow-x: hidden;
   overflow-y: scroll;
   box-sizing: border-box;
+}
+html #wrap #main::-webkit-scrollbar, body #wrap #main::-webkit-scrollbar {
+  width: 0px;
+}
+html #wrap #main:hover, body #wrap #main:hover {
+  padding-right: 0px;
+}
+html #wrap #main:hover::-webkit-scrollbar, body #wrap #main:hover::-webkit-scrollbar {
+  width: 10px;
+}
+html #wrap #main::-webkit-scrollbar-track, body #wrap #main::-webkit-scrollbar-track {
+  background-color: none;
+}
+html #wrap #main::-webkit-scrollbar-thumb, body #wrap #main::-webkit-scrollbar-thumb {
+  background: var(--yt-darker-gray);
+  border-radius: 10px;
 }
 
 :root {

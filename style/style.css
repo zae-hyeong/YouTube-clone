@@ -370,7 +370,6 @@ html #wrap #main::-webkit-scrollbar-thumb, body #wrap #main::-webkit-scrollbar-t
 .video-item .video-info .channel-img {
   width: 48px;
   height: 100%;
-  padding: 0px 12px 0px 0px;
 }
 .video-item .video-info .channel-img img {
   width: 36px;

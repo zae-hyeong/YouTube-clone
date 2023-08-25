@@ -201,3 +201,26 @@ function addVideoItems() {
   }
 };
 addVideoItems()
+
+function addGenreFilterButtons() {
+  function returnRadioButtonItem(name) {
+    return `
+      <label>
+        <input type="radio" name="genre" value="${name}"/>
+        <span>${name}</span>
+      </label>
+    `;
+  }
+  const $buttonfieldset = document.querySelector('#genre-filter-buttons-wrapper > fieldset');
+  $buttonfieldset.insertAdjacentHTML('beforeend', returnRadioButtonItem('전체'));
+  $buttonfieldset.insertAdjacentHTML('beforeend', returnRadioButtonItem('음악'));
+  $buttonfieldset.insertAdjacentHTML('beforeend', returnRadioButtonItem('믹스'));
+  $buttonfieldset.insertAdjacentHTML('beforeend', returnRadioButtonItem('게임'));
+  $buttonfieldset.insertAdjacentHTML('beforeend', returnRadioButtonItem('실시간'));
+  $buttonfieldset.insertAdjacentHTML('beforeend', returnRadioButtonItem('만화 영화'));
+  $buttonfieldset.insertAdjacentHTML('beforeend', returnRadioButtonItem('액션 어드벤처 게임'));
+  $buttonfieldset.insertAdjacentHTML('beforeend', returnRadioButtonItem('최근에 업로드된 동영상'));
+  $buttonfieldset.insertAdjacentHTML('beforeend', returnRadioButtonItem('감상한 동영상'));
+  $buttonfieldset.insertAdjacentHTML('beforeend', returnRadioButtonItem('새로운 맞춤 동영상'));
+}
+addGenreFilterButtons();

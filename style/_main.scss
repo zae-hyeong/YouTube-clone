@@ -20,12 +20,17 @@
   }
 }
 
+#genre-filter-buttons-wrapper {
+  width: 100%;
+  height: 56px;
+}
+
 #videos-wrapper {
   display: flex;
   flex-wrap: wrap;
   align-items: start;
   justify-content: space-between;
-  padding: 0px 30px 0px 20px;
+  padding: 24px 30px 0px 20px;
 }
 
 .video-item-wrapper {

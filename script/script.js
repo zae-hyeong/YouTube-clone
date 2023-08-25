@@ -46,8 +46,7 @@ const youtuberIconImg = {
   InteractiveDeveloper: '<img id="img" draggable="false" class="style-scope yt-img-shadow" height="24" width="24" alt="" src="https://yt3.ggpht.com/ytc/AOPolaTsV3E0xRk1zq5erGBGGB38zVf-705XPrU_8cBH=s88-c-k-c0x00ffffff-no-rj">'
 }
 
-
-const addNavItems = () => {
+function addNavItems() {
   class Menu {
     constructor(menuName, icon) {
       this.menuName = menuName || null;
@@ -141,3 +140,64 @@ const addNavItems = () => {
   appendItems($settingList, settingListItems);
 };
 addNavItems();
+
+function addVideoItems() {
+  class Video {
+    constructor(thumbnailImgSrc, channelImg, title, channelName, views, uploadBefore) {
+      this.thumbnailImgSrc = thumbnailImgSrc;
+      this.channelImg = channelImg;
+      this.title = title;
+      this.channelName = channelName;
+      this.views = views;
+      this.uploadBefore = uploadBefore;
+    }
+  }
+  const returnVideoItem = (video) => {
+    return `
+      <div class="video-item-wrapper">
+        <section class="video-item">
+          <img src="${video.thumbnailImgSrc}" alt="썸네일">
+          <div class="video-info">
+            <div class="channel-img">
+              <img src="${video.channelImg}">
+            </div>
+            <div class="video-text-info">
+              <a class="video-title">
+                <p>${video.title}</p>
+              </a>
+              <a class="channel-name">
+                <p>${video.channelName}</p>
+              </a>
+              <div class="detail-info">
+                <span class="video-views">
+                  조회수 ${video.views}회
+                </span>
+                <span class="upload-before">
+                  ${video.uploadBefore} 전
+                </span>
+              </div>
+            </div>
+            <div class="video-more">
+              <svg enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24" focusable="false" style="pointer-events: none; display: block; width: 100%; height: 100%;"><path d="M12 16.5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5.67-1.5 1.5-1.5zM10.5 12c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5-1.5.67-1.5 1.5zm0-6c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5-1.5.67-1.5 1.5z"></path></svg>
+            </div>
+          </div>
+        </section>
+      </div>
+    `;
+  }
+
+  const dummyVideoNode = returnVideoItem(new Video(
+      thumbnailSrc = "../images/dummyThumbnailImg.jpg",
+      channelImg = "../images/dummyChannelImg.jpg",
+      title = "LE SSERAFIM (르세라핌) ‘이브, 프시케 그리고 푸른 수염의 아내’ OFFICIAL M/V",
+      channelName = "HYBE LABELS",
+      views = "5305만",
+      uploadBefore = "3개월"
+    ));
+
+  const $videos = document.querySelector('.videos-wrrapper');
+  for(let i = 0; i < 48; i++) {
+    $videos.insertAdjacentHTML('beforeend', dummyVideoNode);
+  }
+};
+addVideoItems()

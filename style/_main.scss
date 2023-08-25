@@ -1,12 +1,6 @@
 @import "_defaultSetting.scss";
 
 #main {
-  background-color: red;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: start;
-  justify-content: space-between;
-
   @media screen and (max-width: 1000px) {
     .video-item-wrapper {
       width: 33.3%;
@@ -26,21 +20,25 @@
   }
 }
 
+.videos-wrrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-content: space-between;
+  padding: 0px 30px 0px 20px;
+}
+
 .video-item-wrapper {
-  width: 25%;
-  padding: 10px;
+  width: calc((100%) / 4);
   box-sizing: border-box;
 }
 
 .video-item {
-  width: 100%;
-
   display: flex;
   flex-wrap: wrap;
-
-  border: 1px solid var(--yt-gray);
   border-radius: 10px;
   padding: 0px 8px 40px 8px;
+  position: relative;
 
   img {
     width: 100%;
@@ -66,15 +64,6 @@
       }
 		}
 
-    .video-more {
-      width: 40px;
-      height: 100%;
-      div {
-        width: 24px;
-        height: 24px;
-      }
-    }
-
     .video-text-info {
       width: calc(100% - 60px);
 
@@ -82,23 +71,29 @@
         width: 100%;
         max-height: 44px;
         margin-bottom: 4px;
-        background-color: pink;
 
         font-size: 16px;
         font-weight: 500;
         line-height: 22px;
-        white-space: wrap;
-        line-clamp: 2;
-      }
-      .channel-name {
-        background-color: violet;
 
+        white-space: wrap;
+        text-overflow: ellipsis;
+        display: -webkit-inline-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+      }
+      .channel-name > p {
+        width: 100%;
+      
         font-size: 14px;
         font-weight: 400;
         line-height: 20px;
-        overflow-wrap: normal;
-        white-space: wrap;
         color: var(--yt-text-gray);
+
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
       }
       .detail-info {
         width: 100%;
@@ -106,19 +101,29 @@
         line-height: 20px;
         color: var(--yt-text-gray);
 
-        .video-views {
-          background-color: yellow;
-        }
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+
         .upload-before::before {
           content: "•";
-          background-color: aliceblue;
-          margin: 0px 4px;
-        }
-        .upload-before {
-          background-color: green;
+          margin: 0px 2px;
         }
       }
     }
-		
 	}
+
+  .video-more {
+    width: 24px;
+    height: 24px;
+
+    position: absolute;
+    right: 0%;
+    opacity: 0;
+  }
+  &:hover {
+    .video-more {
+      opacity: 1;
+    }
+  }
 }

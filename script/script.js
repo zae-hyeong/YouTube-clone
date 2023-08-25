@@ -195,7 +195,7 @@ function addVideoItems() {
       uploadBefore = "3개월"
     ));
 
-  const $videos = document.querySelector('.videos-wrrapper');
+  const $videos = document.querySelector('#videos-wrapper');
   for(let i = 0; i < 48; i++) {
     $videos.insertAdjacentHTML('beforeend', dummyVideoNode);
   }

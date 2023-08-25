@@ -335,7 +335,7 @@ html #wrap #main::-webkit-scrollbar-thumb, body #wrap #main::-webkit-scrollbar-t
   }
 }
 
-.videos-wrrapper {
+#videos-wrapper {
   display: flex;
   flex-wrap: wrap;
   align-items: start;

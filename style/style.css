@@ -338,6 +338,36 @@ html #wrap #main::-webkit-scrollbar-thumb, body #wrap #main::-webkit-scrollbar-t
 #genre-filter-buttons-wrapper {
   width: 100%;
   height: 56px;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 100;
+}
+#genre-filter-buttons-wrapper fieldset {
+  width: 100%;
+  display: flex;
+  overflow-y: scroll;
+}
+#genre-filter-buttons-wrapper fieldset label {
+  white-space: nowrap;
+  border-radius: 8px;
+  padding: 0px 12px;
+  margin: 12px 6px;
+  font-size: 14px;
+  text-align: center;
+  line-height: 32px;
+  background-color: #F2F2F2;
+  cursor: pointer;
+}
+#genre-filter-buttons-wrapper fieldset input {
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: -9999px;
+}
+#genre-filter-buttons-wrapper fieldset input:checked + label {
+  background-color: black;
+  color: #FFF;
 }
 
 #videos-wrapper {

@@ -56,7 +56,7 @@ html, body {
 			@include custom-scrollbar;
 
 			flex-grow: 1;
-			width: calc( 100% - var(--aside-width));
+			width: calc(100% - var(--aside-width));
 			height: calc(100vh - var(--header-height));;
 			overflow-x: hidden;
 			overflow-y: scroll;

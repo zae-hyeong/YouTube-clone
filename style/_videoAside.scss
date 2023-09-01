@@ -1,0 +1,10 @@
+#video-aside {
+  display: flex;
+  flex-direction: column;
+
+  .aside-items-wrapper {
+    .aside-item {
+      width: 100%;
+    }
+  }
+}

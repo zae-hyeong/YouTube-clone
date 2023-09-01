@@ -45,6 +45,7 @@ html #wrap, body #wrap {
   flex-wrap: wrap;
 }
 html #wrap #main-header, body #wrap #main-header {
+  position: sticky;
   width: 100%;
   height: var(--header-height);
 }
@@ -104,10 +105,6 @@ html #wrap #main::-webkit-scrollbar-thumb, body #wrap #main::-webkit-scrollbar-t
   html #wrap #main, body #wrap #main {
     width: calc(100% - var(--aside-small-width));
   }
-}
-html #wrap #video-main, body #wrap #video-main {
-  width: 100%;
-  height: calc(100vh - var(--header-height));
 }
 
 :root {

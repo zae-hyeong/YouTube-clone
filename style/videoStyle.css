@@ -232,6 +232,14 @@ html #wrap #main::-webkit-scrollbar-thumb, body #wrap #main::-webkit-scrollbar-t
   border-radius: 50%;
 }
 
+#video-aside {
+  display: flex;
+  flex-direction: column;
+}
+#video-aside .aside-items-wrapper .aside-item {
+  width: 100%;
+}
+
 #video-main-wrapper {
   width: 100%;
   height: calc(100vh - var(--header-height));

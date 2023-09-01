@@ -39,6 +39,7 @@ html, body {
     flex-wrap: wrap;
 
 		#main-header {
+			position: sticky;
 			width: 100%;
 			height: var(--header-height);
 		}
@@ -71,11 +72,6 @@ html, body {
 			#main {
 				width: calc(100% - var(--aside-small-width));
 			}
-		}
-
-		#video-main {
-			width: 100%;
-			height: calc(100vh - var(--header-height));
 		}
 	}
 }

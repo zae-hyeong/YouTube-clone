@@ -12,19 +12,35 @@
   }
 }
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1297px){
   #main-aside {
+    padding-right: 0px;
     nav {
-      padding-right: 4px;
-    }
-    .aside-menu {
-      min-width: 0;
-      .menu-text {
+      height: auto;
+      padding-right: 0px;
+      box-sizing: border-box;
+
+      ul, hr, p {
         display: none;
-        min-width: 0;
       }
-      .menu-icon {
-        width: 100%;
+      .main-menus {
+        display: block;
+      }
+      .aside-menu {
+        flex-direction: column;
+        padding-right: 0px;
+        a {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 10px 0px; 
+          .menu-icon {
+            width: 100%;
+          }
+          .menu-text {
+            display: none;
+          }
+        }
       }
     }
   }

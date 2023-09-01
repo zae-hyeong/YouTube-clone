@@ -271,19 +271,36 @@ html #wrap #main::-webkit-scrollbar-thumb, body #wrap #main::-webkit-scrollbar-t
   margin: 12px 0px;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1297px) {
+  #main-aside {
+    padding-right: 0px;
+  }
   #main-aside nav {
-    padding-right: 4px;
+    height: auto;
+    padding-right: 0px;
+    box-sizing: border-box;
   }
-  #main-aside .aside-menu {
-    min-width: 0;
-  }
-  #main-aside .aside-menu .menu-text {
+  #main-aside nav ul, #main-aside nav hr, #main-aside nav p {
     display: none;
-    min-width: 0;
   }
-  #main-aside .aside-menu .menu-icon {
+  #main-aside nav .main-menus {
+    display: block;
+  }
+  #main-aside nav .aside-menu {
+    flex-direction: column;
+    padding-right: 0px;
+  }
+  #main-aside nav .aside-menu a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0px;
+  }
+  #main-aside nav .aside-menu a .menu-icon {
     width: 100%;
+  }
+  #main-aside nav .aside-menu a .menu-text {
+    display: none;
   }
 }
 .aside-menu {

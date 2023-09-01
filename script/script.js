@@ -56,12 +56,14 @@ function addNavItems() {
 
   const returnMenuNodeHTML = (menu) => {
     return `
-    <li class="aside-menu"><a class="flex" href="#">
-      <div class="menu-icon">
-        <div class="aside-icon">${menu.icon}</div>
-      </div>
-      <div class="menu-text">${menu.menuName}</div>
-    </a></li>`;
+    <li class="aside-menu">
+      <a class="flex" href="#">
+        <div class="menu-icon">
+          <div class="aside-icon">${menu.icon}</div>
+        </div>
+        <div class="menu-text">${menu.menuName}</div>
+      </a>
+    </li>`;
   }
 
   const appendItems = (target, items) => {

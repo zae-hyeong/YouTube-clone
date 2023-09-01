@@ -240,6 +240,15 @@ html #wrap #main::-webkit-scrollbar-thumb, body #wrap #main::-webkit-scrollbar-t
   width: 100%;
 }
 
+#video-section #video {
+  min-width: 640px;
+  min-height: 320px;
+  max-width: 1280px;
+  max-height: 720px;
+  aspect-ratio: 16/9;
+  background-color: red;
+}
+
 #video-main-wrapper {
   width: 100%;
   height: calc(100vh - var(--header-height));

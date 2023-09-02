@@ -193,7 +193,7 @@ function addVideoItems() {
   const dummyVideoNode = returnVideoItem(new Video(
       thumbnailSrc = "../images/dummyThumbnailImg.jpg",
       channelImg = "../images/dummyChannelImg.jpg",
-      title = "LE SSERAFIM (르세라핌) ‘이브, 프시케 그리고 푸른 수염의 아내’ OFFICIAL M/V",
+      title = "LE SSERAFIM (르세라핌) 'Impurities' OFFICIAL M/V",
       channelName = "HYBE LABELS",
       views = "5305만",
       uploadBefore = "3개월"

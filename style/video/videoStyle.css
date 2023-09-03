@@ -419,6 +419,17 @@ html #wrap #main::-webkit-scrollbar-thumb, body #wrap #main::-webkit-scrollbar-t
   justify-content: space-around;
   margin-left: 12px;
 }
+#video-section-wrapper #video-info-wrapper #video-info #video-explain {
+  font-size: 14px;
+  line-height: 20px;
+  margin-top: 24px;
+  padding: 12px;
+  border-radius: 12px;
+  background-color: var(--yt-sub-gray);
+}
+#video-section-wrapper #video-info-wrapper #video-info #video-explain:hover {
+  background-color: var(--yt-darker-gray);
+}
 
 #video-main-wrapper {
   width: 100%;

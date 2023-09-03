@@ -114,6 +114,17 @@
           }
         }
       }
+      #video-explain {
+        font-size: 14px;
+        line-height: 20px;
+        margin-top: 24px;
+        padding: 12px;
+        border-radius: 12px;
+        background-color: var(--yt-sub-gray);
+        &:hover {
+          background-color: var(--yt-darker-gray);
+        }
+      }
     }
   }
 }

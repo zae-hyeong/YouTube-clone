@@ -1,6 +1,9 @@
 #video-aside {
   display: flex;
   flex-direction: column;
+  background-color: yellow;
+
+  height: 3000px;
 
   .aside-items-wrapper {
     .aside-item {
@@ -8,3 +11,52 @@
     }
   }
 }
+.aside-video-item {
+  width: 100%;
+  height: 94px;
+  display: flex;
+  .aside-video-thumbnail {
+    height: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 8px;
+  }
+  .aside-video-info {
+    flex: 1;
+    padding-left: 8px;
+    background-color: pink;
+    .aside-video-title {
+      font-size: 14px;
+      margin-bottom: 4px;
+
+      white-space: wrap;
+      text-overflow: ellipsis;
+      display: -webkit-inline-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+    }
+    .aside-video-detail {
+      font-size: 12px;
+      color: var(--yt-text-gray);
+      line-height: 18px;
+      .upload {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      .upload-before::before {
+        content: "•";
+        margin: 0px 2px;
+      }
+    }
+  }
+  .video-more-wrapper {
+    width: 24px;
+    background-color: aqua;
+    .video-more {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+

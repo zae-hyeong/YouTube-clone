@@ -11,18 +11,15 @@
   #video-main {
     display: flex;
     margin: 0 auto;
-    padding-top: 24px;
     #video-section-wrapper {
       width: calc(100% - 426px);
       height: 3000px;
       padding: 24px;
-      background-color: red;
     }
     #video-aside-wrapper {
       width: 426px;
       height: 3000px;
       padding: 24px 24px 0px 0px;
-      background-color: blue;
       #aside-items-wrapper {
         width: 100%;
       }

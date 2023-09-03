@@ -323,7 +323,6 @@ html #wrap #main::-webkit-scrollbar-thumb, body #wrap #main::-webkit-scrollbar-t
 }
 #video-section-wrapper #video-info-wrapper #video-info {
   width: 100%;
-  height: 43px;
 }
 #video-section-wrapper #video-info-wrapper #video-info #video-meta-data {
   display: flex;
@@ -429,6 +428,30 @@ html #wrap #main::-webkit-scrollbar-thumb, body #wrap #main::-webkit-scrollbar-t
 }
 #video-section-wrapper #video-info-wrapper #video-info #video-explain:hover {
   background-color: var(--yt-darker-gray);
+}
+#video-section-wrapper #comment {
+  margin-top: 24px;
+}
+#video-section-wrapper #comment #comment-header {
+  display: flex;
+}
+#video-section-wrapper #comment #comment-header #num-of-comments {
+  margin-right: 24px;
+  line-height: 24px;
+  font-size: 16px;
+}
+#video-section-wrapper #comment #comment-header #sort-by {
+  display: flex;
+  border: none;
+  background-color: transparent;
+}
+#video-section-wrapper #comment #comment-header #sort-by #sort-by-icon {
+  width: 24px;
+  height: 24px;
+}
+#video-section-wrapper #comment #comment-header #sort-by span {
+  line-height: 24px;
+  font-size: 14px;
 }
 
 #video-main-wrapper {

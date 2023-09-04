@@ -261,6 +261,10 @@ html #wrap #main::-webkit-scrollbar-thumb, body #wrap #main::-webkit-scrollbar-t
   height: 94px;
   display: flex;
 }
+.aside-video-item > a {
+  width: 100%;
+  display: flex;
+}
 .aside-video-item .aside-video-thumbnail {
   height: 100%;
   aspect-ratio: 16/9;

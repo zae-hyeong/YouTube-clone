@@ -214,6 +214,64 @@
           }
         }
       }
+      #comment-list {
+        .comment {
+          display: flex;
+          margin-bottom: 24px;
+          .comment-content-wrapper {
+            font-size: 14px;
+            line-height: 20px;
+            .comment-uploader-and-date-before {
+              .comment-uploader {
+                font-size: 13px;
+                font-weight: 550;
+              }
+              .comment-date-before {
+                font-size: 12px;
+                color: var(--yt-text-gray);
+              }
+            }
+            .comment-functions {
+              display: flex;
+              button {
+                border: none;
+                border-radius: 18px;
+                line-height: 32px;
+                font-size: 12px;
+                display: flex;
+                padding: 1px 8px;
+                margin-right: 8px;
+                align-items: center;
+                cursor: pointer;
+                background-color: transparent;
+                &:hover {
+                  background-color: var(--yt-darker-gray);
+                }
+                img {
+                  width: 18px;
+                  height: 18px;
+                }
+              }
+              .comment-like {
+                position: relative;
+                margin-right: 42px;
+                .comment-num-of-like {
+                  position: absolute;
+                  left: calc(100% + 4px);
+                  width: 30px;
+                }
+              }
+              .post-reply-comment {
+                padding: 1px 12px;
+              }
+            }
+          }
+          .comment-more {
+            width: 24px;
+            height: 24px;
+          }
+        }
+      }
     }
   } 
 }

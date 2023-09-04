@@ -308,6 +308,20 @@ html #wrap #main::-webkit-scrollbar-thumb, body #wrap #main::-webkit-scrollbar-t
   height: 24px;
 }
 
+:root {
+  --yt-gray: #e5e5e5;
+  --yt-sub-gray: #F8F8F8;
+  --yt-darker-gray: #D9D9D9;
+  --yt-text-gray: #606060;
+  --default-font: "Roboto", "Arial", sans-serif;
+}
+
+.flex, #main-header, #main-header #header-left-menus, #main-header #header-center-menus, #main-header #header-right-menus {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 #video-section-wrapper #video-wrapper #video {
   min-width: 640px;
   min-height: 320px;
@@ -433,29 +447,90 @@ html #wrap #main::-webkit-scrollbar-thumb, body #wrap #main::-webkit-scrollbar-t
 #video-section-wrapper #video-info-wrapper #video-info #video-explain:hover {
   background-color: var(--yt-darker-gray);
 }
-#video-section-wrapper #comment {
+#video-section-wrapper #comment-wrapper {
   margin-top: 24px;
 }
-#video-section-wrapper #comment #comment-header {
+#video-section-wrapper #comment-wrapper #comment-header {
   display: flex;
+  margin-bottom: 24px;
 }
-#video-section-wrapper #comment #comment-header #num-of-comments {
+#video-section-wrapper #comment-wrapper #comment-header #num-of-comments {
   margin-right: 24px;
   line-height: 24px;
   font-size: 16px;
 }
-#video-section-wrapper #comment #comment-header #sort-by {
+#video-section-wrapper #comment-wrapper #comment-header #sort-by {
   display: flex;
   border: none;
   background-color: transparent;
 }
-#video-section-wrapper #comment #comment-header #sort-by #sort-by-icon {
+#video-section-wrapper #comment-wrapper #comment-header #sort-by #sort-by-icon {
   width: 24px;
   height: 24px;
 }
-#video-section-wrapper #comment #comment-header #sort-by span {
+#video-section-wrapper #comment-wrapper #comment-header #sort-by span {
   line-height: 24px;
   font-size: 14px;
+}
+#video-section-wrapper #comment-wrapper #comment-section #comment-form {
+  display: flex;
+}
+#video-section-wrapper #comment-wrapper #comment-section #comment-form #comment-input-wrapper {
+  width: 100%;
+  margin-bottom: 24px;
+}
+#video-section-wrapper #comment-wrapper #comment-section #comment-form #comment-input-wrapper #comment-input {
+  width: calc(100% - 30px);
+  outline: none;
+  border: none;
+  border-bottom: 0.5px var(--yt-darker-gray) solid;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 3.5px 0px;
+}
+#video-section-wrapper #comment-wrapper #comment-section #comment-form #comment-input-wrapper #comment-input:focus {
+  border: none;
+  border-bottom: 2px black solid;
+}
+#video-section-wrapper #comment-wrapper #comment-section #comment-form #comment-input-wrapper #comment-buttons {
+  border: none;
+  float: right;
+  margin-right: 30px;
+  margin-top: 9px;
+}
+#video-section-wrapper #comment-wrapper #comment-section #comment-form #comment-input-wrapper #comment-buttons button {
+  line-height: 36px;
+  padding: 0px 16px;
+  border-radius: 18px;
+  font-size: 14px;
+  border: none;
+}
+#video-section-wrapper #comment-wrapper #comment-section #comment-form #comment-input-wrapper #comment-buttons #cancel-comment {
+  background-color: transparent;
+  margin-right: 8px;
+  cursor: pointer;
+}
+#video-section-wrapper #comment-wrapper #comment-section #comment-form #comment-input-wrapper #comment-buttons #cancel-comment:hover {
+  background-color: var(--yt-darker-gray);
+}
+#video-section-wrapper #comment-wrapper #comment-section #comment-form #comment-input-wrapper #comment-buttons #cancel-comment:active {
+  background-color: #b6b6b6;
+}
+#video-section-wrapper #comment-wrapper #comment-section #comment-form #comment-input-wrapper #comment-buttons #upload-comment {
+  background-color: #0556BF;
+  color: white;
+  cursor: pointer;
+}
+#video-section-wrapper #comment-wrapper #comment-section #comment-form #comment-input-wrapper #comment-buttons #upload-comment:hover {
+  background-color: #0650b1;
+}
+#video-section-wrapper #comment-wrapper #comment-section #comment-form #comment-input-wrapper #comment-buttons #upload-comment:active {
+  background-color: #3778CC;
+}
+#video-section-wrapper #comment-wrapper #comment-section #comment-form #comment-input-wrapper #comment-buttons #upload-comment:disabled {
+  background-color: #F2F2F2;
+  color: var(--yt-text-gray);
+  cursor: default;
 }
 
 #video-main-wrapper {

@@ -1,3 +1,5 @@
+@import "../_defaultSetting.scss";
+
 #video-section-wrapper {
   #video-wrapper {
     #video {
@@ -126,10 +128,11 @@
       }
     }
   }
-  #comment {
+  #comment-wrapper {
     margin-top: 24px;
     #comment-header {
       display: flex;
+      margin-bottom: 24px;
       #num-of-comments {
         margin-right: 24px;
         line-height: 24px;
@@ -150,5 +153,67 @@
       }
     }
     
+    #comment-section {
+      #comment-form {
+        display: flex;
+        #comment-input-wrapper {
+          width: 100%;
+          margin-bottom: 24px;
+          #comment-input {
+            width: calc(100% - 30px);
+            outline: none;
+            border: none;
+            border-bottom: 0.5px var(--yt-darker-gray) solid;
+            font-size: 14px;
+            line-height: 20px;
+            padding: 3.5px 0px;
+            &:focus {
+              border: none;
+              border-bottom: 2px black solid;
+            }
+          }
+          #comment-buttons {
+            border: none;
+            float: right;
+            margin-right: 30px;
+            margin-top: 9px;
+            button {
+              line-height: 36px;
+              padding: 0px 16px;
+              border-radius: 18px;
+              font-size: 14px;
+              border: none;
+            }
+            #cancel-comment {
+              background-color: transparent;
+              margin-right: 8px;
+              cursor: pointer;
+              &:hover {
+                background-color: var(--yt-darker-gray);
+              }
+              &:active {
+                background-color: #b6b6b6;
+              }
+            }
+            #upload-comment {
+              background-color: #0556BF;
+              color: white;
+              cursor: pointer;
+              &:hover {
+                background-color: #0650b1;
+              }
+              &:active {
+                background-color: #3778CC;
+              }
+              &:disabled {
+                background-color: #F2F2F2;
+                color: var(--yt-text-gray);
+                cursor: default;
+              }
+            }
+          }
+        }
+      }
+    }
   } 
 }

@@ -249,11 +249,12 @@ html #wrap #main::-webkit-scrollbar-thumb, body #wrap #main::-webkit-scrollbar-t
 #video-aside {
   display: flex;
   flex-direction: column;
-  background-color: yellow;
-  height: 3000px;
 }
-#video-aside .aside-items-wrapper .aside-item {
+#video-aside .aside-items-wrapper .aside-video-item {
   width: 100%;
+}
+#video-aside .aside-items-wrapper .aside-video-item:hover .video-more {
+  display: block;
 }
 
 .aside-video-item {
@@ -273,7 +274,6 @@ html #wrap #main::-webkit-scrollbar-thumb, body #wrap #main::-webkit-scrollbar-t
 .aside-video-item .aside-video-info {
   flex: 1;
   padding-left: 8px;
-  background-color: pink;
 }
 .aside-video-item .aside-video-info .aside-video-title {
   font-size: 14px;
@@ -301,11 +301,11 @@ html #wrap #main::-webkit-scrollbar-thumb, body #wrap #main::-webkit-scrollbar-t
 }
 .aside-video-item .video-more-wrapper {
   width: 24px;
-  background-color: aqua;
 }
 .aside-video-item .video-more-wrapper .video-more {
   width: 24px;
   height: 24px;
+  display: none;
 }
 
 :root {
@@ -532,13 +532,20 @@ html #wrap #main::-webkit-scrollbar-thumb, body #wrap #main::-webkit-scrollbar-t
   color: var(--yt-text-gray);
   cursor: default;
 }
+#video-section-wrapper #comment-wrapper #comment-section #comment-list {
+  padding-right: 30px;
+}
 #video-section-wrapper #comment-wrapper #comment-section #comment-list .comment {
   display: flex;
   margin-bottom: 24px;
 }
+#video-section-wrapper #comment-wrapper #comment-section #comment-list .comment:hover .comment-more-wrapper .comment-more {
+  display: block;
+}
 #video-section-wrapper #comment-wrapper #comment-section #comment-list .comment .comment-content-wrapper {
   font-size: 14px;
   line-height: 20px;
+  flex: 1;
 }
 #video-section-wrapper #comment-wrapper #comment-section #comment-list .comment .comment-content-wrapper .comment-uploader-and-date-before .comment-uploader {
   font-size: 13px;
@@ -582,9 +589,15 @@ html #wrap #main::-webkit-scrollbar-thumb, body #wrap #main::-webkit-scrollbar-t
 #video-section-wrapper #comment-wrapper #comment-section #comment-list .comment .comment-content-wrapper .comment-functions .post-reply-comment {
   padding: 1px 12px;
 }
-#video-section-wrapper #comment-wrapper #comment-section #comment-list .comment .comment-more {
+#video-section-wrapper #comment-wrapper #comment-section #comment-list .comment .comment-more-wrapper {
+  width: 40px;
+}
+#video-section-wrapper #comment-wrapper #comment-section #comment-list .comment .comment-more-wrapper .comment-more {
   width: 24px;
   height: 24px;
+  float: right;
+  padding-top: 12px;
+  display: none;
 }
 
 #video-main-wrapper {

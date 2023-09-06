@@ -214,13 +214,23 @@
           }
         }
       }
+
       #comment-list {
+        padding-right: 30px;
         .comment {
           display: flex;
           margin-bottom: 24px;
+          &:hover {
+            .comment-more-wrapper {
+              .comment-more {
+                display: block;
+              }
+            }
+          }
           .comment-content-wrapper {
             font-size: 14px;
             line-height: 20px;
+            flex: 1;
             .comment-uploader-and-date-before {
               .comment-uploader {
                 font-size: 13px;
@@ -266,9 +276,15 @@
               }
             }
           }
-          .comment-more {
-            width: 24px;
-            height: 24px;
+          .comment-more-wrapper {
+            width: 40px;
+            .comment-more {
+              width: 24px;
+              height: 24px;
+              float: right;
+              padding-top: 12px;
+              display: none;
+            }
           }
         }
       }

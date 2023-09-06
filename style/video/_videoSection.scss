@@ -160,6 +160,9 @@
           width: 100%;
           margin-bottom: 24px;
           #comment-input {
+            &:placeholder-shown {
+              
+            }
             width: calc(100% - 30px);
             outline: none;
             border: none;
@@ -171,6 +174,7 @@
               border: none;
               border-bottom: 2px black solid;
             }
+            
           }
           #comment-buttons {
             border: none;

@@ -1,10 +1,10 @@
 const commentScripts = () => {
-  let $commentForm = document.getElementById('comment-form');
+  const $commentForm = document.getElementById('comment-form');
   
-  let $commentInput = document.getElementById('comment-input');
-  let $submitButton = document.getElementById('upload-comment');
+  const $commentInput = document.getElementById('comment-input');
+  const $submitButton = document.getElementById('upload-comment');
   
-  let $commentList = document.getElementById('comment-list');
+  const $commentList = document.getElementById('comment-list');
   
   (function activeCommentSubmitButton() {
     $commentInput.addEventListener('change', () => {
@@ -61,3 +61,54 @@ const commentScripts = () => {
   })();
 }
 commentScripts();
+
+const addAsideVideos = () => {
+  class AsideVideo {
+    constructor(title, thumbnail, uploader, views, uploadBefore){
+      this.title = title;
+      this.thumbnail = thumbnail;
+      this.uploader = uploader;
+      this.views = views;
+      this.uploadBefore = uploadBefore;
+    }
+  }
+
+  const $asideVideoList = document.getElementById('aside-items-list');
+
+  (function addVideoItems() {
+    const videoElement = returnAsideVideoItemElement(new AsideVideo(
+      'LE SSERAFIM (르세라핌) \'Impurities\' OFFICIAL M/V',
+      './images/dummyThumbnailImg.jpg',
+      'HYBE LABELS',
+      '2426만',
+      '9개월'
+    ));
+    for(let i = 0; i < 20; i++) {
+      $asideVideoList.insertAdjacentHTML("afterend", videoElement);
+    }
+  })();
+
+  function returnAsideVideoItemElement(video) {
+    return `
+      <li class="aside-video-item">
+        <a href="#">
+          <img class="aside-video-thumbnail" src="${video.thumbnail}" alt="썸네일 이미지">
+          <div class="aside-video-info">
+            <span class="aside-video-title">${video.title}</span>
+            <div class="aside-video-detail">
+              <div class="aside-video-uploader">${video.uploader}</div>
+              <div class="video-meta-data">
+                <span class="views">조회수 ${video.views}회</span>
+                <span class="upload-before">${video.uploadBefore} 전</span></div>
+            </div>
+          </div>
+          <div class="video-more-wrapper">
+            <div class="video-more">
+              <svg enable-background="new 0 0 24 24" viewBox="0 0 24 24" style="pointer-events: none; display: block; width: 100%; height: 100%;"><path d="M12 16.5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5.67-1.5 1.5-1.5zM10.5 12c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5-1.5.67-1.5 1.5zm0-6c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5-1.5.67-1.5 1.5z"></path></svg>
+            </div>
+        </a>
+      </li>
+    `;
+  }
+}
+addAsideVideos();

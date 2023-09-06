@@ -250,10 +250,10 @@ html #wrap #main::-webkit-scrollbar-thumb, body #wrap #main::-webkit-scrollbar-t
   display: flex;
   flex-direction: column;
 }
-#video-aside .aside-items-wrapper .aside-video-item {
+#video-aside .aside-items-list .aside-video-item {
   width: 100%;
 }
-#video-aside .aside-items-wrapper .aside-video-item:hover .video-more {
+#video-aside .aside-items-list .aside-video-item:hover .video-more {
   display: block;
 }
 
@@ -261,6 +261,7 @@ html #wrap #main::-webkit-scrollbar-thumb, body #wrap #main::-webkit-scrollbar-t
   width: 100%;
   height: 94px;
   display: flex;
+  margin-bottom: 8px;
 }
 .aside-video-item > a {
   width: 100%;
@@ -610,12 +611,10 @@ html #wrap #main::-webkit-scrollbar-thumb, body #wrap #main::-webkit-scrollbar-t
 }
 #video-main-wrapper #video-main #video-section-wrapper {
   width: calc(100% - 426px);
-  height: 3000px;
   padding: 24px;
 }
 #video-main-wrapper #video-main #video-aside-wrapper {
   width: 426px;
-  height: 3000px;
   padding: 24px 24px 0px 0px;
 }
 #video-main-wrapper #video-main #video-aside-wrapper #aside-items-wrapper {

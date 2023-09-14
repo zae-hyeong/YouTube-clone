@@ -16,20 +16,42 @@ const commentScripts = () => {
     });
   })();
   
-  (function submitComment() {
-    (function handleSubmit() {
+  const savedComments = [];
+  
+  (function renderCommentList() {
+
+    (function displayCommentHistory() {
+      const savedComments = JSON.parse(localStorage.getItem('comments'));
+      if(!savedComments) return;
+
+      savedComments.map(comment => {
+        const commentItem = returnCommentHTML('@anonymousUser', comment);
+        $commentList.insertAdjacentHTML("afterbegin", commentItem);
+      });
+
+    })();
+
+    (function submitComment() {
       $commentForm.addEventListener('submit', (e) => {
         e.preventDefault();
         
         const commentValue = $commentInput.value;
-        if(!commentValue) { return };
+        if(!commentValue) return;
+
+        saveCommentInLocalStorage(commentValue);
 
         const commentElement = returnCommentHTML('@anonymousUser', commentValue);
         $commentList.insertAdjacentHTML("afterbegin", commentElement);
         $commentInput.value = null;
       });
     })();
-  
+
+    function saveCommentInLocalStorage(commentVal) {
+      savedComments.push(commentVal);
+      localStorage.setItem("comments", JSON.stringify(savedComments));
+      console.log(JSON.stringify(localStorage.getItem('comments')));
+    }
+
     function returnCommentHTML(userId, commentValue, numOfLike = 0, uploadBefore = '0초 전') {
       return `
         <li class="comment">

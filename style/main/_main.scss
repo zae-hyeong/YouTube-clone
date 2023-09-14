@@ -79,10 +79,14 @@
   padding: 0px 8px 40px 8px;
   position: relative;
 
-  img {
+  .video-thumbnail-wrapper {
     width: 100%;
-		aspect-ratio: 16 / 9;
-    border-radius: 10px;
+    img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 10px;
+      object-fit: cover;
+    }
   }
 
 	.video-info {

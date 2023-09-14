@@ -445,10 +445,15 @@ html #wrap #main::-webkit-scrollbar-thumb, body #wrap #main::-webkit-scrollbar-t
   padding: 0px 8px 40px 8px;
   position: relative;
 }
-.video-item img {
+.video-item .video-thumbnail-wrapper {
+  width: 100%;
+}
+.video-item .video-thumbnail-wrapper img {
   width: 100%;
   aspect-ratio: 16/9;
   border-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .video-item .video-info {
   width: 100%;

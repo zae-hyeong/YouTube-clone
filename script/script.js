@@ -173,7 +173,7 @@ function addVideoItems() {
 
   function returnVideoInstance(videoSnippet, videoStatistics) {
     return new Video(
-      thumbnailSrc = videoSnippet.thumbnails.default.url,
+      thumbnailSrc = videoSnippet.thumbnails.standard.url,
       channelImg = "../images/dummyChannelImg.jpg",
       title = videoSnippet.title,
       channelName = videoSnippet.channelTitle,
@@ -187,7 +187,9 @@ function addVideoItems() {
       <a href="./video.html">
         <div class="video-item-wrapper">
           <section class="video-item">
-            <img src="${video.thumbnailImgSrc}" alt="썸네일">
+            <div class="video-thumbnail-wrapper">
+              <img src="${video.thumbnailImgSrc}" alt="썸네일">
+            </div>
             <div class="video-info">
               <div class="channel-img">
                 <img src="${video.channelImg}">

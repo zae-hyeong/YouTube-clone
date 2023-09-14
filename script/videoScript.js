@@ -7,8 +7,8 @@ const commentScripts = () => {
   const $commentList = document.getElementById('comment-list');
   
   (function activeCommentSubmitButton() {
-    $commentInput.addEventListener('change', () => {
-      if( $commentInput.value.length ) {
+    $commentInput.addEventListener('input', () => {
+      if( $commentInput.value ) {
         $submitButton.disabled = false;
       } else {
         $submitButton.disabled = true;
@@ -20,7 +20,10 @@ const commentScripts = () => {
     (function handleSubmit() {
       $commentForm.addEventListener('submit', (e) => {
         e.preventDefault();
+        
         const commentValue = $commentInput.value;
+        if(!commentValue) { return };
+
         const commentElement = returnCommentHTML('@anonymousUser', commentValue);
         $commentList.insertAdjacentHTML("afterbegin", commentElement);
         $commentInput.value = null;

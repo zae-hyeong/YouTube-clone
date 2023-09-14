@@ -154,7 +154,35 @@ function addVideoItems() {
       this.uploadBefore = uploadBefore;
     }
   }
-  const returnVideoItem = (video) => {
+
+  const API_KEY = 'AIzaSyDph8CYg03M3r5WtqSvlMAIc7BmlJs5okI';
+  const $videos = document.querySelector('#videos-wrapper');
+
+  function fetchVideo() {
+    fetch(`https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2C%20statistics&chart=mostPopular&maxResults=40&regionCode=kr&key=${API_KEY}`)
+    .then(response => response.json())
+    .then(videos => {
+      videos.items.map(video => {
+        const videoInstance = returnVideoInstance(video.snippet, video.statistics);
+        $videos.insertAdjacentHTML('beforeend', returnVideoItem(videoInstance));
+      });
+    })
+    .catch(err => console.log(err));
+  }
+  fetchVideo();
+
+  function returnVideoInstance(videoSnippet, videoStatistics) {
+    return new Video(
+      thumbnailSrc = videoSnippet.thumbnails.default.url,
+      channelImg = "../images/dummyChannelImg.jpg",
+      title = videoSnippet.title,
+      channelName = videoSnippet.channelTitle,
+      views = videoStatistics.viewCount,
+      uploadBefore = "3개월"
+      );
+  };
+
+  function returnVideoItem(video) {
     return `
       <a href="./video.html">
         <div class="video-item-wrapper">
@@ -188,20 +216,6 @@ function addVideoItems() {
         </div>
       </a>
     `;
-  }
-
-  const dummyVideoNode = returnVideoItem(new Video(
-      thumbnailSrc = "../images/dummyThumbnailImg.jpg",
-      channelImg = "../images/dummyChannelImg.jpg",
-      title = "LE SSERAFIM (르세라핌) 'Impurities' OFFICIAL M/V",
-      channelName = "HYBE LABELS",
-      views = "5305만",
-      uploadBefore = "3개월"
-    ));
-
-  const $videos = document.querySelector('#videos-wrapper');
-  for(let i = 0; i < 48; i++) {
-    $videos.insertAdjacentHTML('beforeend', dummyVideoNode);
   }
 };
 addVideoItems()

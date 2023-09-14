@@ -24,3 +24,18 @@
     }
   }
 }
+
+@media screen and (max-width: 1090px) {
+  #video-main-wrapper {
+    #video-main {
+      flex-direction: column;
+      #video-section-wrapper {
+        width: auto;
+      }
+      #video-aside-wrapper {
+        width: auto;
+        padding-left: 24px;
+      }
+    }
+  }
+}

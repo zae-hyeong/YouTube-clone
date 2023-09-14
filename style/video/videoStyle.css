@@ -619,4 +619,17 @@ html #wrap #main::-webkit-scrollbar-thumb, body #wrap #main::-webkit-scrollbar-t
 }
 #video-main-wrapper #video-main #video-aside-wrapper #aside-items-wrapper {
   width: 100%;
+}
+
+@media screen and (max-width: 1090px) {
+  #video-main-wrapper #video-main {
+    flex-direction: column;
+  }
+  #video-main-wrapper #video-main #video-section-wrapper {
+    width: auto;
+  }
+  #video-main-wrapper #video-main #video-aside-wrapper {
+    width: auto;
+    padding-left: 24px;
+  }
 }/*# sourceMappingURL=videoStyle.css.map */

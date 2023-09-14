@@ -27,16 +27,20 @@
 	box-sizing: border-box;
 	z-index: 500;
 
-  #header-left-menus {
+  #header-left-menus, #header-right-menus {
     @extend .flex;
   }
 
   #header-center-menus {
-    @extend .flex;
+    display: flex;
   }
+}
 
-  #header-right-menus {
-    @extend .flex;
+@media screen and (max-width: 630px) {
+  #main-header {
+    #header-center-menus {
+      display: none;
+    }
   }
 }
 

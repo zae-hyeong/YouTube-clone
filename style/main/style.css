@@ -7,7 +7,7 @@
   --default-font: "Roboto", "Arial", sans-serif;
 }
 
-.flex, #main-header #header-right-menus, #main-header #header-center-menus, #main-header #header-left-menus, #main-header {
+.flex, #main-header #header-left-menus, #main-header #header-right-menus, #main-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -21,7 +21,7 @@
   --default-font: "Roboto", "Arial", sans-serif;
 }
 
-.flex, #main-header #header-right-menus, #main-header #header-center-menus, #main-header #header-left-menus, #main-header {
+.flex, #main-header #header-left-menus, #main-header #header-right-menus, #main-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -115,7 +115,7 @@ html #wrap #main::-webkit-scrollbar-thumb, body #wrap #main::-webkit-scrollbar-t
   --default-font: "Roboto", "Arial", sans-serif;
 }
 
-.flex, #main-header #header-right-menus, #main-header #header-center-menus, #main-header #header-left-menus, #main-header {
+.flex, #main-header #header-left-menus, #main-header #header-right-menus, #main-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -125,6 +125,15 @@ html #wrap #main::-webkit-scrollbar-thumb, body #wrap #main::-webkit-scrollbar-t
   padding: 0px 16px;
   box-sizing: border-box;
   z-index: 500;
+}
+#main-header #header-center-menus {
+  display: flex;
+}
+
+@media screen and (max-width: 630px) {
+  #main-header #header-center-menus {
+    display: none;
+  }
 }
 .header-icon, #header-center-menus #mic-icon {
   width: 24px;
@@ -254,7 +263,7 @@ html #wrap #main::-webkit-scrollbar-thumb, body #wrap #main::-webkit-scrollbar-t
   --default-font: "Roboto", "Arial", sans-serif;
 }
 
-.flex, #main-header, #main-header #header-left-menus, #main-header #header-center-menus, #main-header #header-right-menus {
+.flex, #main-header, #main-header #header-left-menus, #main-header #header-right-menus {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -359,7 +368,7 @@ html #wrap #main::-webkit-scrollbar-thumb, body #wrap #main::-webkit-scrollbar-t
   --default-font: "Roboto", "Arial", sans-serif;
 }
 
-.flex, #main-header, #main-header #header-left-menus, #main-header #header-center-menus, #main-header #header-right-menus {
+.flex, #main-header, #main-header #header-left-menus, #main-header #header-right-menus {
   display: flex;
   justify-content: space-between;
   align-items: center;
